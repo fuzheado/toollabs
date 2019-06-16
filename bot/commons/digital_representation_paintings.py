@@ -66,8 +66,9 @@ class DigitalRepresentationBot:
             return
 
         qid = item.title()
-        summary = u'this file depicts and is a digital representation of [[:d:%s]] (based on image usage)' % (qid,)
+        summary = u'this file depicts [[:d:%s]] (based on image usage)' % (qid,)
         self.addClaim(mediaid, u'P180', qid, summary)
+        summary = u'this file is a digital representation of [[:d:%s]] (based on image usage)' % (qid,)
         self.addClaim(mediaid, u'P6243', qid, summary)
 
     def addClaim(self, mediaid, pid, qid, summary=''):
